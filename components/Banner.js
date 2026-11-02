@@ -2,7 +2,7 @@ import React from "react";
 
 function Banner() {
   return (
-    <section className="w-full ">
+    <section className="-mx-[31px]">
       <img
         src="/images/bannerImage.png"
         alt="banner image"
