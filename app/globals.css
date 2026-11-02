@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --primary: #28a745;
-  --secondary: #4f4f4f;
+  --secondary: #10411B;
 
   --text: #595959;
   --text-muted: #282828b2;
@@ -27,4 +27,10 @@ body {
   background: var(--background);
   color: var(--text);
   font-family: var(--font-yekan-bakh), sans-serif;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
