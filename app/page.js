@@ -1,9 +1,5 @@
-import Banner from "@/components/Banner";
+import HomeLayout from "@/components/containers/HomeLayout";
 
 export default function Home() {
-  return (
-    <>
-      <Banner />
-    </>
-  );
+  return <HomeLayout />;
 }
