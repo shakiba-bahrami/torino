@@ -1,6 +1,11 @@
 import Banner from "../Banner";
 function HomeLayout() {
-  return <Banner />;
+  return (
+    <>
+      <div></div>
+      <Banner />
+    </>
+  );
 }
 
 export default HomeLayout;

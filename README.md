@@ -34,4 +34,64 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
 # torino
+
+# torino structure
+
+torino/
+│
+├── app/
+│ ├── layout.jsx
+│ ├── page.jsx
+│ ├── globals.css
+│ │
+│ └── profiles/
+│ └── page.jsx
+│
+├── components/
+│ ├── auth/
+│ │ ├── AuthForm.jsx
+│ │ ├── LoginModal.jsx
+│ │ └── OtpModal.jsx
+│ │
+│ ├── common/
+│ │ ├── Header.jsx
+│ │ ├── Footer.jsx
+│ │ └── ...
+│ │
+│ └── ...
+│
+├── core/
+│ ├── config/
+│ │ └── axiosConfig.js
+│ │
+│ ├── services/
+│ │ ├── authService.js
+│ │ ├── userService.js
+│ │ ├── basketService.js
+│ │ └── tourService.js
+│ │
+│ └── utils/
+│ ├── getCookie.js
+│ ├── setCookie.js
+│ └── isValidMobile.js
+│
+├── hooks/
+│ ├── auth/
+│ │ ├── useGetUserData.js
+│ │ ├── useSendOtp.js
+│ │ └── useCheckOtp.js
+│ │
+│ ├── user/
+│ │ ├── useGetUserTours.js
+│ │ └── ...
+│ │
+│ ├── basket/
+│ │ ├── useGetUserBasket.js
+│ │ └── useAddToBasket.js
+│ │
+│ └── ...
+│
+└── providers/
+└── TanStackQueryProvider.jsx
