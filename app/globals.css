@@ -3,8 +3,9 @@
 :root {
   --background: #ffffff;
   --primary: #28a745;
-  --secondary: #10411B;
+  --secondary: #10411b;
 
+  --text-primary: #282828;
   --text: #595959;
   --text-muted: #282828b2;
 
@@ -16,16 +17,20 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
 
+  --color-text-primary: var(--text-primary);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
 
   --color-info: var(--info);
+}
 
+@utility fw-* {
+  font-weight: calc(--value(integer) - 95);
 }
 
 body {
   background: var(--background);
-  color: var(--text);
+  color: var(--text-primary);
   font-family: var(--font-yekan-bakh), sans-serif;
 }
 input,
