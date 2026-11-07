@@ -1,9 +1,8 @@
 import { useSendOtp } from "@/core/services/mutations";
 import { isValidMobile } from "@/core/utils/validation";
-import React from "react";
 import { toast } from "react-toastify";
 
-function SendOtpForm({ setStep, setMobile, mobile, code, setCode ,setIsLoginOpen}) {
+function SendOtpForm({ setStep, setMobile, mobile, setCode, setIsLoginOpen }) {
   const { isPending, mutate } = useSendOtp();
 
   const submitHandler = (e) => {
@@ -12,6 +11,7 @@ function SendOtpForm({ setStep, setMobile, mobile, code, setCode ,setIsLoginOpen
     if (!isValidMobile(mobile)) {
       toast.error("لطفا شماره موبایل معتبر وارد کنید");
       setMobile("");
+      return;
     } else {
       mutate(
         { mobile },
@@ -21,6 +21,10 @@ function SendOtpForm({ setStep, setMobile, mobile, code, setCode ,setIsLoginOpen
             setCode(response.data.code);
             setStep(2);
           },
+          onError: (error) => {
+            console.log("OTP Error:", error);
+            toast.error(error?.response?.data?.message || "خطایی رخ داد");
+          },
         },
       );
     }
@@ -28,7 +32,15 @@ function SendOtpForm({ setStep, setMobile, mobile, code, setCode ,setIsLoginOpen
 
   return (
     <div className="w-[358px] h-[362px] flex flex-col justify-center items-start pr-[40px] relative">
-      <button className="text-black !fw-350 absolute left-[25px] top-[17px] scale-x-[1.7] scale-y-[1.3]  ">
+      <button
+        type="button"
+        onClick={() => {
+          setMobile("");
+          setStep(1);
+          setIsLoginOpen(false);
+        }}
+        className="text-black !fw-350 absolute left-[25px] top-[17px] scale-x-[1.7] scale-y-[1.3]  "
+      >
         x
       </button>
       <form onSubmit={submitHandler} className="flex flex-col">
@@ -53,9 +65,10 @@ function SendOtpForm({ setStep, setMobile, mobile, code, setCode ,setIsLoginOpen
         />
         <button
           type="submit"
-          className="bg-primary w-[278px] h-[54px] rounded-[6px]  text-white !text-[18px] mt-[41px]"
+          className="bg-primary w-[278px] h-[54px] rounded-[6px]  text-white !text-[18px] mt-[41px] disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={isPending}
         >
-          ارسال کد تایید
+          {isPending ? "در حال ارسال..." : "ارسال کد تایید"}
         </button>
       </form>
     </div>

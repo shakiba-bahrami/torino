@@ -4,6 +4,7 @@ import { setCookie } from "../utils/cookies";
 
 export const useSendOtp = () => {
   const mutationFn = (data) => api.post("/auth/send-otp", data);
+
   return useMutation({ mutationFn });
 };
 
@@ -13,5 +14,6 @@ export const useCheckOtp = () => {
     setCookie("accessToken", data?.data?.accessToken, 30);
     setCookie("refreshToken", data?.data?.refreshToken, 360);
   };
+
   return useMutation({ mutationFn, onSuccess });
 };

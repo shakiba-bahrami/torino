@@ -7,8 +7,8 @@ function AuthModalManager() {
   const [isLoginOpen, setIsLoginOpen] = useState(true);
   if (!isLoginOpen) return null;
   return (
-    <ModalContainer>
-      <AuthenticationForm setIsLoginOpen={setIsLoginOpen}/>
+    <ModalContainer setIsLoginOpen={setIsLoginOpen}>
+      <AuthenticationForm setIsLoginOpen={setIsLoginOpen} />
     </ModalContainer>
   );
 }

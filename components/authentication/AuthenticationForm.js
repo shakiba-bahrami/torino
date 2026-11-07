@@ -12,7 +12,7 @@ function AuthenticationForm({ setIsLoginOpen }) {
   return (
     <div>
       {step === 1 && (
-        <SendOtpForm setStep={setStep} setMobile={setMobile} mobile={mobile} code={code} setCode={setCode} setIsLoginOpen={setIsLoginOpen}/>
+        <SendOtpForm setStep={setStep} setMobile={setMobile} mobile={mobile} setCode={setCode} setIsLoginOpen={setIsLoginOpen}/>
       )}
       {step === 2 && <CheckOtpForm setStep={setStep} setMobile={setMobile} mobile={mobile} code={code} setIsLoginOpen={setIsLoginOpen}/>}
     </div>
