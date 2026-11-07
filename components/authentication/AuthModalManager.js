@@ -1,10 +1,8 @@
 "use client";
-import { useState } from "react";
 import ModalContainer from "../containers/ModalContainer";
 import AuthenticationForm from "./AuthenticationForm";
 
-function AuthModalManager() {
-  const [isLoginOpen, setIsLoginOpen] = useState(true);
+function AuthModalManager({isLoginOpen,setIsLoginOpen}) {
   if (!isLoginOpen) return null;
   return (
     <ModalContainer setIsLoginOpen={setIsLoginOpen}>

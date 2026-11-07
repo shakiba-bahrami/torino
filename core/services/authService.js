@@ -1,5 +1,6 @@
 import { getCookie } from "../utils/cookies";
 import axios from "axios";
+import { api } from "@/core/config/api";
 
 const getNewTokens = async () => {
   const refreshToken = getCookie("refreshToken");
@@ -14,4 +15,10 @@ const getNewTokens = async () => {
     return { error };
   }
 };
-export { getNewTokens };
+
+const getUserData = async () => {
+  const userData = await api.get("/user/profile");
+  return userData;
+};
+
+export { getNewTokens, getUserData };

@@ -39,7 +39,7 @@ api.interceptors.response.use(
         setCookie("refreshToken", "", 0);
       }
     }
-    return Promise.reject(error?.response?.data);
+    return Promise.reject(error);
   },
 );
 export { api };
