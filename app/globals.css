@@ -10,6 +10,8 @@
   --text-muted: #282828b2;
 
   --info: #009eca;
+
+  --light-button: #d8ffe1;
 }
 
 @theme inline {
@@ -22,6 +24,7 @@
   --color-text-muted: var(--text-muted);
 
   --color-info: var(--info);
+  --color-light-button: var(--light-button);
 }
 
 @utility fw-* {
