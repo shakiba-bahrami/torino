@@ -1,12 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function NotFound() {
   return (
     <div className="flex flex-col items-center mt-[20px] relative pb-[100px]">
-      <img
+      {/* <img
         className="w-[322px] h-[322px]"
         src="/images/ErrorTV.png"
         alt="error image"
+      /> */}
+      <Image
+        src="/images/ErrorTV.png"
+        width={644}
+        height={644}
+        alt="صفحه خطای 404"
+        loading="eager"
+        className="w-[322px] h-[322px]"
       />
       <p className="fw-600 text-[24px] absolute top-[297px]">
         صفحه مورد نظر یافت نشد!
