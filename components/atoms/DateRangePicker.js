@@ -8,14 +8,17 @@ function DateRangePicker() {
   };
 
   return (
-    <div className="relative">
-      <LuCalendarDays className="w-[18px] h-auto text-black/50 absolute top-[27px] right-[8rem]" />
+    <div className="relative mt-[15px] ">
+      <LuCalendarDays className="absolute right-[140px] top-0 bottom-0 my-auto w-[18px] text-black/50 pointer-events-none" />
       <DatePicker
         range
         locale="fa"
         onChange={handleDateChange}
-        inputClass="w-[328px] h-[47px] rounded-[12px] border-1 border-black/15 mt-[12px] text-center pr-[20px]"
+        inputClass="w-full h-[47px] rounded-[12px] border border-black/15 text-center pr-[35px] "
         inputAttributes={{ placeholder: "تاریخ" }}
+        accentColor="#28a745"
+        round="x2"
+        className="!w-[331px] !h-[269px] !rounded-[12px] !bg-white !border !border-[#00000040]"
       />
     </div>
   );

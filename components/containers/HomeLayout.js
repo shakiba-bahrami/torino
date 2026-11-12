@@ -10,7 +10,7 @@ async function HomeLayout() {
   return (
     <div>
       {/* <Test /> */}
-      <Banner />
+      {/* <Banner /> */}
       {/* <ServerError /> */}
       <TourSearchSection />
       <TourList toursData={toursData} />

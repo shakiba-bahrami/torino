@@ -6,7 +6,7 @@ import SelectField from "./atoms/SelectField";
 import DateRangePicker from "./atoms/DateRangePicker";
 
 function TourSearchSection() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setValue,watch } = useForm();
   return (
     <div className="w-full my-[28px]">
       <form action="">
@@ -15,12 +15,16 @@ function TourSearchSection() {
             icon={HiOutlineLocationMarker}
             fieldName="originId"
             register={register}
+            setValue={setValue}
+            watch={watch}
             placeholder="مبدا"
           />
           <SelectField
             icon={HiOutlineGlobeAlt}
             fieldName="destinationId"
             register={register}
+            setValue={setValue}
+            watch={watch}
             placeholder="مقصد"
           />
         </div>
