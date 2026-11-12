@@ -4,8 +4,6 @@ import { getTourSummary } from "@/core/utils/tourFormatters";
 function TourCard({ tour }) {
   const tourSummary = getTourSummary(tour);
 
-  console.log("price:", tour.price, typeof tour.price);
-  console.log("formatted:", toPersianPrice(tour.price));
   return (
     <div className="w-full my-[24px] rounded-[10px] border-[1px] border-black/12">
       <img src={tour.image} alt="" className="w-full h-[159px]" />

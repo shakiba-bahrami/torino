@@ -6,10 +6,13 @@ export const serverFetch = async (
   if (endpoint) url += endpoint;
   try {
     const res = await fetch(`${url}`, cache);
+    if (!res.ok) {
+  throw new Error(`Request failed: ${res.status}`);
+}
     const json = await res.json();
     return json;
   } catch (error) {
     console.log(error);
-    return false;
+    throw error;
   }
 };

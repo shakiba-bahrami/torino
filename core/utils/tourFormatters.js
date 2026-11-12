@@ -1,6 +1,6 @@
 export const getTourSummary = (tour) => {
   //   console.log(tour);
-  const date = new Date("2025-11-15T00:00:00.000Z");
+  const date = new Date(tour.startDate);
   const month = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
     month: "long",
     timeZone: "UTC",
