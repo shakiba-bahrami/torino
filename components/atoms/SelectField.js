@@ -15,7 +15,7 @@ function SelectField({
     (city) => city.id === selectedCity,
   )?.name;
   const dropdownRef = useRef(null);
-  const field = register(fieldName);
+  // const field = register(fieldName);
   useEffect(() => {
     if (!isOpen) return;
     const handleClickOutside = (e) => {

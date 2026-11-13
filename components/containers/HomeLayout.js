@@ -4,16 +4,25 @@ import ServerError from "../ServerError";
 import Test from "../Test";
 import TourList from "../TourList/TourList";
 import TourSearchSection from "../TourSearchSection";
-async function HomeLayout() {
-    const toursData = await serverFetch("/tour", { cache: "no-store" });
-  
+import EmptyState from "../EmptyState";
+
+async function HomeLayout({ searchParams }) {
+  const params = await searchParams;
+  const toursData = await serverFetch("/tour", { cache: "no-store" }, params);
+  console.log("uhewifuserjko;ws", toursData);
+
   return (
     <div>
       {/* <Test /> */}
       {/* <Banner /> */}
       {/* <ServerError /> */}
       <TourSearchSection />
-      <TourList toursData={toursData} />
+      {!toursData.length ? (
+        <EmptyState />
+
+      ) : (
+        <TourList toursData={toursData} />
+      )}
     </div>
   );
 }

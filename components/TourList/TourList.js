@@ -5,7 +5,6 @@ import { FaChevronDown } from "react-icons/fa6";
 
 function TourList({ toursData }) {
   const [visibleToursCount, setVisibleToursCount] = useState(4);
-
   return (
     <div className="my-[48px]">
       <h2 className="fw-400 text-[20px] text-black translate-y-4">
