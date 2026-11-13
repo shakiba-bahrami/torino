@@ -4,11 +4,6 @@ import Image from "next/image";
 function NotFound() {
   return (
     <div className="flex flex-col items-center mt-[20px] relative pb-[100px]">
-      {/* <img
-        className="w-[322px] h-[322px]"
-        src="/images/ErrorTV.png"
-        alt="error image"
-      /> */}
       <Image
         src="/images/ErrorTV.png"
         width={644}

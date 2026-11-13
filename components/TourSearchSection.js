@@ -9,6 +9,8 @@ import { useSearchParams } from "next/navigation";
 
 function TourSearchSection() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+
   const { register, handleSubmit, setValue, watch } = useForm({
     defaultValues: {
       originId: searchParams.get("originId") || "",
@@ -17,7 +19,6 @@ function TourSearchSection() {
       endDate: searchParams.get("endDate") || "",
     },
   });
-  const router = useRouter();
 
   const submitHandler = (data) => {
     const filteredData = Object.fromEntries(
@@ -26,6 +27,13 @@ function TourSearchSection() {
       ),
     );
     router.push(`/?${new URLSearchParams(filteredData).toString()}`);
+  };
+
+  const clearFilter = (fieldNames) => {
+    const params = new URLSearchParams(searchParams.toString());
+    const fields = Array.isArray(fieldNames) ? fieldNames : [fieldNames];
+    fields.forEach((field) => params.delete(field));
+    router.push(params.size ? `/?${params.toString()}` : "/");
   };
 
   return (
@@ -39,6 +47,7 @@ function TourSearchSection() {
             setValue={setValue}
             watch={watch}
             placeholder="مبدا"
+            clearFilter={clearFilter}
           />
           <SelectField
             icon={HiOutlineGlobeAlt}
@@ -47,9 +56,10 @@ function TourSearchSection() {
             setValue={setValue}
             watch={watch}
             placeholder="مقصد"
+            clearFilter={clearFilter}
           />
         </div>
-        <DateRangePicker setValue={setValue} />
+        <DateRangePicker setValue={setValue} clearFilter={clearFilter} />
         <button
           type="submit"
           className="w-[328px] h-[47px] bg-primary rounded-[16px] p-[8px] !text-[20px] !fw-400 text-white text-center mt-[22px]"

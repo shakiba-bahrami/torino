@@ -8,14 +8,23 @@ function SelectField({
   placeholder,
   setValue,
   watch,
+  clearFilter,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const selectedCity = watch(fieldName);
+
   const selectedCityName = cities.find(
     (city) => city.id === selectedCity,
   )?.name;
+
   const dropdownRef = useRef(null);
   // const field = register(fieldName);
+
+  const handleClear = () => {
+    setValue(fieldName, "");
+    clearFilter(fieldName);
+  };
+
   useEffect(() => {
     if (!isOpen) return;
     const handleClickOutside = (e) => {
@@ -31,6 +40,18 @@ function SelectField({
 
   return (
     <div ref={dropdownRef} className="relative">
+      {selectedCity && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleClear();
+          }}
+          className="absolute left-[10px] top-1/2 -translate-y-1/2"
+        >
+          ×
+        </button>
+      )}
       <Icon className="absolute top-[11px] right-[45px] w-[20px] h-auto text-black/50" />
       <div className="w-[160px] h-[47px] border border-black/15 rounded-[12px] p-[8px]  pr-[30px]  ">
         <button
@@ -41,7 +62,7 @@ function SelectField({
           {selectedCityName || placeholder}
         </button>
         {isOpen && (
-          <div className="bg-white z-10 border border-black/15 rounded-[11px] w-[160px] h-auto absolute top-[52px] right-0">
+          <div className="bg-white z-10 border border-black/15 rounded-[11px] w-[160px] max-h-[220px] overflow-y-auto absolute top-[52px] right-0">
             <ul>
               <li className="w-full h-[35px] bg-[#F8F8F8] rounded-t-[11px] text-[13px] text-text-primary/70 px-[5px] flex items-center">
                 پرتردد

@@ -9,7 +9,6 @@ import EmptyState from "../EmptyState";
 async function HomeLayout({ searchParams }) {
   const params = await searchParams;
   const toursData = await serverFetch("/tour", { cache: "no-store" }, params);
-  console.log("uhewifuserjko;ws", toursData);
 
   return (
     <div>
