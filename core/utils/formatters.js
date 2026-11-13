@@ -9,3 +9,12 @@ export const toPersianPrice = (price) => {
 export const dateFormatter = (date) => {
   return date.toISOString().slice(0, 10);
 };
+
+export const getTourDuration = (startDate, endDate) => {
+  const duration = new Date(endDate) - new Date(startDate);
+  const nights = Math.round(duration / (1000 * 60 * 60 * 24));
+  return {
+    days: nights + 1,
+    nights,
+  };
+};
