@@ -8,5 +8,6 @@ export const optionIcons = {
   "ساحل اختصاصی": <WiHorizonAlt />,
   "صبحانه، نهار و شام": <IoFastFoodOutline />,
   "نهار و شام": <MdOutlineLunchDining />,
-  "هتل پنج ستاره": <MdOutlineHotelClass />,
+  "نهار و صبحانه": <MdOutlineLunchDining />,
+  "هفل پنج ستاره": <MdOutlineHotelClass />,
 };

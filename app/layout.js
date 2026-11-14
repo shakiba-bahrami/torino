@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body className={`${yekanBakh.variable} min-h-screen flex flex-col `}>
         <TanstackQueryProvider>
-          <Container className="flex flex-col flex-1">
             <Header />
+          <Container className="flex flex-col flex-1">
             <main className="flex-1">{children}</main>
             <Footer />
           </Container>

@@ -1,5 +1,6 @@
 import { toPersianPrice } from "@/core/utils/formatters";
 import { getTourSummary } from "@/core/utils/tourFormatters";
+import Button from "@/components/atoms/Button";
 
 function TourCard({ tour }) {
   const tourSummary = getTourSummary(tour);
@@ -14,9 +15,12 @@ function TourCard({ tour }) {
         {tourSummary}
       </p>
       <div className="w-full border-t border-black/12 flex justify-between items-center px-[10px] py-[5px]">
-        <button className="w-[99px] h-[29px] bg-primary rounded-[4px] text-white !text-[15px] !fw-400 ">
+        <Button
+          href={`/tour/${tour.id}`}
+          className="w-[99px] h-[29px] rounded-[4px]"
+        >
           رزرو
-        </button>
+        </Button>
         <p className="fw-400 text-[12px] text-black">
           <span className="text-info text-[16px] fw-400 pl-[5px] ">
             {toPersianPrice(tour.price)}
