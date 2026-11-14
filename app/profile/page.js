@@ -1,10 +1,11 @@
-import React from "react";
+"use client";
+import { useGetUserData } from "@/core/services/queries";
 
-function profile() {
-
+function Profile() {
+  const { data, isPending } = useGetUserData();
+  const userData = data?.data;
+  console.log(userData);
   
-
-  return <div>profile</div>;
 }
 
-export default profile;
+export default Profile;

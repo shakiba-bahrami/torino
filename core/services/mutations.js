@@ -10,7 +10,7 @@ export const useSendOtp = () => {
 };
 
 export const useCheckOtp = () => {
-const queryClient = useQueryClient();
+  const queryClient = useQueryClient();
 
   const mutationFn = (data) => api.post("/auth/check-otp", data);
   const onSuccess = (data) => {
@@ -23,3 +23,9 @@ const queryClient = useQueryClient();
 
   return useMutation({ mutationFn, onSuccess });
 };
+
+export const useAddToBasket = () => {
+  const mutationFn = (id) => api.put(`basket/${id}`);
+  return useMutation({ mutationFn });
+};
+

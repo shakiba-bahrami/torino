@@ -74,6 +74,7 @@ async function TourDetailsPage({ params }) {
       <div className="flex justify-between mt-[26px] mb-[25px]">
         <ReserveButton
           className={"w-[154px] h-[42px] !text-[18px] rounded-[10px]"}
+          id={tourDetails.id}
         />
         <div className="flex gap-2 items-center">
           <span className="text-[24px] text-info fw-600">
