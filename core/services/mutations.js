@@ -30,6 +30,32 @@ export const useAddToBasket = () => {
 };
 
 export const useAddUserData = () => {
-  const mutationFn = (data) => api.put("/user/profile",data);
+  const mutationFn = (data) => api.put("/user/profile", data);
   return useMutation({ mutationFn });
+};
+
+import { toast } from "react-toastify";
+
+export const useAddOrder = () => {
+  const queryClient = useQueryClient();
+
+  const mutationFn = (data) => api.post("/order", data);
+
+  const onSuccess = (response) => {
+    toast.success(response?.data?.message || "خرید تور با موفقیت انجام شد.");
+
+    queryClient.setQueryData(["basket"], {
+      data: null,
+    });
+
+    queryClient.invalidateQueries({
+      queryKey: ["user-data"],
+    });
+  };
+
+  const onError = (error) => {
+    toast.error(error?.response?.data?.message || "خطا در ثبت سفارش");
+  };
+
+  return useMutation({ mutationFn, onSuccess, onError });
 };
