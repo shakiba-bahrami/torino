@@ -29,3 +29,7 @@ export const useAddToBasket = () => {
   return useMutation({ mutationFn });
 };
 
+export const useAddUserData = () => {
+  const mutationFn = (data) => api.put("/user/profile",data);
+  return useMutation({ mutationFn });
+};

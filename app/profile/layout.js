@@ -4,10 +4,36 @@ import Link from "next/link";
 import { IoPerson } from "react-icons/io5";
 import { PiSunHorizonFill } from "react-icons/pi";
 import { TbReplaceFilled } from "react-icons/tb";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 function ProfileLayout({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      switch (pathname) {
+        case "/profile":
+          if (e.key === "ArrowLeft") router.push("/profile/mytours");
+          break;
+
+        case "/profile/mytours":
+          if (e.key === "ArrowLeft") router.push("/profile/transactions");
+          if (e.key === "ArrowRight") router.push("/profile");
+          break;
+
+        case "/profile/transactions":
+          if (e.key === "ArrowRight") router.push("/profile/mytours");
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [pathname, router]);
+
   return (
     <AuthProvider>
       <div className="mt-[10px]">
