@@ -73,7 +73,9 @@ function PersonalInfo() {
     <div className="mt-[20px]">
       {isEditing ? (
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit, (errors) =>
+            console.log("Validation errors:", errors),
+          )}
           className="flex flex-col gap-5 p-[20px] border border-black/20 rounded-[10px]"
         >
           <h4 className="text-[15px] fw-500">ویرایش اطلاعات شخصی</h4>

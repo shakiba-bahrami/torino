@@ -18,6 +18,9 @@ export const getTourSummary = (tour) => {
     case "ship":
       travelKind = "کشتی";
       break;
+    case "van":
+      travelKind = "ون";
+      break;
     case "train":
       travelKind = "قطار";
       break;

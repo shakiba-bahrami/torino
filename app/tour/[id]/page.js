@@ -15,11 +15,12 @@ async function TourDetailsPage({ params }) {
   const { id } = await params;
   //a1b2c3d4-e5f6-7890-abcd-ef1234567890
   const tourDetails = await serverFetch(`/tour/${id}`, { cache: "no-cache" });
-  console.log(tourDetails);
   const { days, nights } = getTourDuration(
     tourDetails.startDate,
     tourDetails.endDate,
   );
+  const fleetVehicleType = tourDetails.fleetVehicle.toLowerCase();
+
   return (
     <div className="mt-[20px]">
       <div className="relative w-[330px] h-[220px]">
@@ -49,7 +50,7 @@ async function TourDetailsPage({ params }) {
 
       <div className="mt-[35px] grid grid-cols-3 grid-rows-2 gap-1 items-center text-center h-[70px] -mx-[25px]">
         <div className="flex items-center justify-center gap-2 text-[#444444] text-[16px] fw-400 ">
-          {fleetVehicle[tourDetails.fleetVehicle][0]}
+          {fleetVehicle[fleetVehicleType][0]}
           <p>حمل و نقل</p>
         </div>
         <div className="flex items-center justify-center gap-2 text-[#444444] text-[16px] fw-400">
@@ -61,9 +62,9 @@ async function TourDetailsPage({ params }) {
           <p>بیمه</p>
         </div>
         <p className="text-[14px] fw-600 ">
-          {fleetVehicle[tourDetails.fleetVehicle][1]}
+          {fleetVehicle[fleetVehicleType][1]}
         </p>
-        <p className="text-[14px] fw-600 ">{`حداکثر ${toPersianDigits(tourDetails.capacity)} نفر`}</p>
+        <p className="text-[14px] fw-600 ">{`حداکثر ${toPersianDigits(tourDetails.availableSeats)} نفر`}</p>
         <p className="text-[14px] fw-600 min-w-[115px]">
           {tourDetails.insurance
             ? `بیمه ${toPersianDigits(50)} هزار دیناری`

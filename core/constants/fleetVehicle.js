@@ -7,6 +7,7 @@ export const fleetVehicle = {
   bus: [<FaBusAlt />, "اتوبوس"],
   ship: [<FaShip />, "کشتی"],
   airplane: [<IoAirplaneOutline />, "پرواز"],
-  SUV: [<TbCarSuv />, "آفرود"],
+  suv: [<TbCarSuv />, "آفرود"],
   train: [<FaTrain />, "قطار"],
+  van: [<FaTrain />, "ون"],
 };

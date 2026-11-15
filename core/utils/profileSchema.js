@@ -9,7 +9,6 @@ export const personalInfoSchema = z.object({
     message: "جنسیت را انتخاب کنید",
   }),
   birthDate: z.string().min(1, "تاریخ تولد را وارد کنید"),
-  email: z.string().email("ایمیل معتبر وارد کنید"),
 });
 
 export const emailSchema = z.object({
