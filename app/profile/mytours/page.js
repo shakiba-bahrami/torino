@@ -1,7 +1,26 @@
-import React from "react";
-
+"use client";
+import { useGetUserTours } from "@/core/services/queries";
+import EmptyTours from "./EmptyTours";
+import MyTourCard from "./MyTourCard";
 function MyToursPage() {
-  return <div>MyToursPage</div>;
+  const { data, isPending, isError } = useGetUserTours();
+
+  if (isPending) return <p>در حال دریافت تورها</p>;
+  if (isError) return <p>خطا در دریافت تورها</p>;
+
+  if (data?.data.length === 0) return <EmptyTours />;
+
+  return (
+    <div className="mt-[20px]">
+      <ul>
+        {data.data.map((tour) => (
+          <li key={tour.id}>
+            <MyTourCard tour={tour} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default MyToursPage;

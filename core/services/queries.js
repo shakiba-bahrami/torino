@@ -13,3 +13,16 @@ export const useGetBasket = () => {
   const queryKey = ["basket"];
   return useQuery({ queryFn, queryKey, retry: false });
 };
+
+export const useGetUserTours = () => {
+  const queryFn = () => api.get("/user/tours");
+  const queryKey = ["user-tours"];
+  return useQuery({ queryFn, queryKey, retry: false });
+};
+
+export const useGetUserTransactions = () => {
+  const queryFn = () => api.get("/user/transactions");
+  const queryKey = ["user-transactions"];
+
+  return useQuery({ queryFn, queryKey, retry: false });
+};
