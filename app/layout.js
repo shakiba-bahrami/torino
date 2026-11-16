@@ -3,7 +3,6 @@ import yekanBakh from "./fonts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Container from "@/components/containers/Container";
 import TanstackQueryProvider from "@/provider/TanstackQueryProvider";
@@ -20,7 +19,7 @@ export default function RootLayout({ children }) {
         <TanstackQueryProvider>
           <AuthModalProvider>
             <Container className="flex flex-col flex-1">
-              <main className="flex-1">{children}</main>
+              <main>{children}</main>
               <Footer />
             </Container>
           </AuthModalProvider>

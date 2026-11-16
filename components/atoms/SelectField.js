@@ -47,17 +47,17 @@ function SelectField({
             e.stopPropagation();
             handleClear();
           }}
-          className="absolute left-[10px] top-1/2 -translate-y-1/2"
+          className="absolute left-[10px] top-1/2 -translate-y-1/2 "
         >
           ×
         </button>
       )}
-      <Icon className="absolute top-[11px] right-[45px] w-[20px] h-auto text-black/50" />
-      <div className="w-[160px] h-[47px] border border-black/15 rounded-[12px] p-[8px]  pr-[30px]  ">
+      <Icon className="absolute top-[11px] right-[45px] w-[20px] h-auto text-black/50 md:text-[#2C2C2C] md:right-2" />
+      <div className="w-[160px] h-[47px] border border-black/15 rounded-[12px] p-[8px]  pr-[30px] md:border-none">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className=" w-full h-full fw-400 text-black/50 "
+          className=" w-full h-full fw-400 text-black/50 md:border-l md:border-black/15 md:text-[#2C2C2C] md:!text-[20px] md:text-right "
         >
           {selectedCityName || placeholder}
         </button>

@@ -1,3 +1,4 @@
+import { toPersianDigits } from "@/core/utils/formatters";
 import TourSlider from "./TourSlider";
 import { BsFillQuestionOctagonFill } from "react-icons/bs";
 
@@ -35,7 +36,8 @@ function WhyTorino() {
           <div>
             <p className="text-[14px] fw-600">پشتیبانی</p>
             <p className="text-[12px] fw-300 w-[225px]">
-              پشتیبانی و همراهی 24 ساعته در تمامی مراحل سفر شما.
+              پشتیبانی و همراهی {toPersianDigits(24)} ساعته در تمامی مراحل سفر
+              شما.
             </p>
           </div>
         </div>
@@ -48,7 +50,7 @@ function WhyTorino() {
           <div>
             <p className="text-[14px] fw-600">رضایت کاربران</p>
             <p className="text-[12px] fw-300 w-[225px]">
-              رضایت بیش از 10هزار کاربر از تور های ما.{" "}
+              رضایت بیش از {toPersianDigits(10)} هزار کاربر از تور های ما.{" "}
             </p>
           </div>
         </div>

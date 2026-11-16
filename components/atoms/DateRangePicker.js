@@ -24,9 +24,9 @@ function DateRangePicker({ setValue, clearFilter }) {
   };
 
   return (
-    <div className="relative mt-[15px] ">
+    <div className="relative mt-[15px] md:mt-0 ">
       {isShowPlaceholder && (
-        <LuCalendarDays className="absolute right-[140px] top-0 bottom-0 my-auto w-[18px] text-black/50 pointer-events-none" />
+        <LuCalendarDays className="absolute right-[140px] top-0 bottom-0 my-auto w-[18px] text-black/50 pointer-events-none md:right-[60px] md:w-[24px] md:text-[#2c2c2c]" />
       )}
       {!isShowPlaceholder && (
         <button
@@ -41,7 +41,7 @@ function DateRangePicker({ setValue, clearFilter }) {
         range
         locale="fa"
         onChange={dateChangeHandler}
-        inputClass="w-full h-[47px] rounded-[12px] border border-black/15 !text-[14px] text-center  text-black/50 placeholder:pr-[35px] placeholder:text-black/50"
+        inputClass="w-full h-[47px] rounded-[12px] border border-black/15 !text-[14px] text-center text-black/50 placeholder:pr-[35px] placeholder:text-black/50 md:border-none md:!text-[20px] "
         inputAttributes={{ placeholder: "تاریخ" }}
         accentColor="#28a745"
         round="x2"
