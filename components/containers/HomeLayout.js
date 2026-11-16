@@ -6,6 +6,7 @@ import TourList from "../TourList/TourList";
 import TourSearchSection from "../TourSearchSection";
 import EmptyState from "../EmptyState";
 import PhonePurchase from "../PhonePurchase";
+import WhyTorino from "../WhyTorino";
 
 async function HomeLayout({ searchParams }) {
   const params = await searchParams;
@@ -17,6 +18,7 @@ async function HomeLayout({ searchParams }) {
       <TourSearchSection />
       {!toursData.length ? <EmptyState /> : <TourList toursData={toursData} />}
       <PhonePurchase />
+      <WhyTorino />
     </div>
   );
 }
