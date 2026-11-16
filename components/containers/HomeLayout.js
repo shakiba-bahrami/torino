@@ -5,6 +5,7 @@ import Test from "../Test";
 import TourList from "../TourList/TourList";
 import TourSearchSection from "../TourSearchSection";
 import EmptyState from "../EmptyState";
+import PhonePurchase from "../PhonePurchase";
 
 async function HomeLayout({ searchParams }) {
   const params = await searchParams;
@@ -12,16 +13,10 @@ async function HomeLayout({ searchParams }) {
 
   return (
     <div>
-      {/* <Test /> */}
-      {/* <Banner /> */}
-      {/* <ServerError /> */}
+      <Banner />
       <TourSearchSection />
-      {!toursData.length ? (
-        <EmptyState />
-
-      ) : (
-        <TourList toursData={toursData} />
-      )}
+      {!toursData.length ? <EmptyState /> : <TourList toursData={toursData} />}
+      <PhonePurchase />
     </div>
   );
 }
