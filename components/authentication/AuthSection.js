@@ -12,66 +12,49 @@ function AuthSection({ setIsLoginOpen }) {
   const [isAccountOpen, setIsAccountOpen] = useState(false);
   return (
     <div>
-      <div className="md:hidden">
-        {isPending || !isAuthenticated ? (
-          <button type="button" onClick={() => setIsLoginOpen(true)}>
-            <img
-              src="/icons/login.svg"
-              alt="ورود یا ثبت نام"
-              className="w-[40px] h-auto ml-[5px]"
-            />
-          </button>
-        ) : (
-          <div className="relative">
+      {isPending || !isAuthenticated ? (
+        <>
+          <div className="md:hidden mt-[10px]">
+            <button type="button" onClick={() => setIsLoginOpen(true)}>
+              <img
+                src="/icons/login.svg"
+                alt="ورود یا ثبت نام"
+                className="w-[40px] h-auto"
+              />
+            </button>
+          </div>
+
+          <div className="hidden md:block">
             <button
               type="button"
-              onClick={() => setIsAccountOpen((prev) => !prev)}
-              className="flex items-center gap-1 text-primary text-[14px] -ml-[5px] cursor-pointer "
+              onClick={() => setIsLoginOpen(true)}
+              className="flex gap-2 w-[clamp(130px,11.53vw,166px)] h-auto text-primary text-[clamp(14px,1.25vw,18px)] !fw-600 p-[clamp(6px,0.7vw,10px)] border-2 border-primary rounded-[8px]"
             >
-              <IoPerson className="text-[12px] rounded-[50%]" />
-              <p>{toPersianDigits(mobile)}</p>
-              <GoChevronDown className="text-[18px]" />
+              <IoPerson className="text-[22px] my-auto rounded-[50%]" />
+              ورود  |  ثبت نام
             </button>
-
-            {isAccountOpen && (
-              <AccountDropdown
-                onClose={() => setIsAccountOpen(false)}
-                mobile={mobile}
-              />
-            )}
           </div>
-        )}
-      </div>
-      <div className="hidden md:block">
-        {isPending || !isAuthenticated ? (
+        </>
+      ) : (
+        <div className="relative">
           <button
             type="button"
-            onClick={() => setIsLoginOpen(true)}
-            className="w-[166px] h-auto ml-[5px] text-primary text-[18px] !fw-600 p-[10px] border-2 border-primary rounded-[8px]"
+            onClick={() => setIsAccountOpen((prev) => !prev)}
+            className="flex items-center gap-[clamp(4px,0.42vw,6px)] text-primary text-[clamp(12px,0.97vw,14px)] -ml-[5px] cursor-pointer md:text-[14px]"
           >
-            ورود | ثبت نام
+            <IoPerson className="rounded-[50%] md:text-[22px]" />
+            <p className="text-[14px] lg:text-[20px]">{toPersianDigits(mobile)}</p>
+            <GoChevronDown className="text-[clamp(16px,1.25vw,18px)]" />
           </button>
-        ) : (
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => setIsAccountOpen((prev) => !prev)}
-              className="flex items-center gap-1 text-primary text-[14px] -ml-[5px] cursor-pointer "
-            >
-              <IoPerson className="text-[12px] rounded-[50%]" />
-              <p>{toPersianDigits(mobile)}</p>
-              <GoChevronDown className="text-[18px]" />
-            </button>
 
-            {isAccountOpen && (
-              <AccountDropdown
-                onClose={() => setIsAccountOpen(false)}
-                mobile={mobile}
-              />
-            )}
-          </div>
-        )}
-      </div>
+          {isAccountOpen && (
+            <AccountDropdown
+              onClose={() => setIsAccountOpen(false)}
+              mobile={mobile}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }

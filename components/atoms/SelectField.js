@@ -39,7 +39,7 @@ function SelectField({
   }, [isOpen]);
 
   return (
-    <div ref={dropdownRef} className="relative">
+    <div ref={dropdownRef} className="flex-1 relative ">
       {selectedCity && (
         <button
           type="button"
@@ -47,17 +47,17 @@ function SelectField({
             e.stopPropagation();
             handleClear();
           }}
-          className="absolute left-[10px] top-1/2 -translate-y-1/2 "
+          className="absolute left-[10px] md:left-[20px] top-1/2 -translate-y-1/2 "
         >
           ×
         </button>
       )}
-      <Icon className="absolute top-[11px] right-[45px] w-[20px] h-auto text-black/50 md:text-[#2C2C2C] md:right-2" />
-      <div className="w-[160px] h-[47px] border border-black/15 rounded-[12px] p-[8px]  pr-[30px] md:border-none">
+      <Icon className="absolute top-[11px] right-[45px] w-[20px] h-auto text-black/50 md:text-[#2C2C2C] md:right-0" />
+      <div className="h-[47px] border border-black/15 rounded-[12px] p-[8px] pr-[30px] md:border-none md:text-[17px] lg:text-[20px]">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className=" w-full h-full fw-400 text-black/50 md:border-l md:border-black/15 md:text-[#2C2C2C] md:!text-[20px] md:text-right "
+          className=" w-full h-full fw-400 text-black/50 md:border-l md:border-black/15 md:text-[#2C2C2C] md:text-[clamp(14px,1.39vw,20px)] md:text-right "
         >
           {selectedCityName || placeholder}
         </button>

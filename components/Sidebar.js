@@ -12,10 +12,7 @@ function Sidebar({ onClose }) {
         className="fixed inset-0 z-40 bg-black/20"
         aria-label="بستن منو"
       />
-      <aside className="fixed top-0 right-0 z-50 w-[200px] h-screen bg-white shadow-lg">
-        <button onClick={onClose} className="p-3 text-xl">
-          ×
-        </button>
+      <aside className="fixed top-0 right-0 z-50 w-[209px] h-screen bg-white shadow-lg rounded-l-xl pt-[30px] pr-[10px]">
         <NavLinks onClose={onClose} />
       </aside>
     </>

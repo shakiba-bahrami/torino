@@ -18,7 +18,7 @@ function AccountDropdown({ onClose, mobile }) {
     router.replace("/");
   };
   return (
-    <div className="w-[157px] h-[114px] absolute left-0 top-full mt-2 bg-white z-10 rounded-[11px] text-[12px] text-center shadow-md">
+    <div className="w-[157px] h-[114px] absolute left-0 top-full mt-2 bg-white z-10 rounded-[11px] text-[clamp(12px,0.97vw,14px)] text-center shadow-md">
       <ul className="p-[10px]">
         <li className="h-[35px]">{toPersianDigits(mobile)}</li>
         <li className="h-[35px]">

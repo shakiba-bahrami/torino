@@ -1,12 +1,11 @@
 import { toPersianPrice } from "@/core/utils/formatters";
-import { getTourSummary } from "@/core/utils/tourFormatters";
 import Button from "@/components/atoms/Button";
+import { getTourSummary } from "@/core/utils/tourFormatters";
 
 function TourCard({ tour }) {
   const tourSummary = getTourSummary(tour);
-
   return (
-    <div className="w-full my-[24px] rounded-[10px] border-[1px] border-black/12">
+    <div className="w-full rounded-[10px] border-[1px] border-black/12">
       <img src={tour.image} alt="" className="w-full h-[159px]" />
       <h3 className="fw-400 text-[22px] text-black pr-[10px] pt-[10px]">
         {tour.title}

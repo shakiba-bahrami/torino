@@ -4,31 +4,35 @@ import { dateFormatter } from "@/core/utils/formatters";
 import { useState } from "react";
 
 function DateRangePicker({ setValue, clearFilter }) {
-  const [isShowPlaceholder, setIsShowPlaceholder] = useState(true);
+  const [selectedDate, setSelectedDate] = useState(false);
   const [key, setKey] = useState(0);
 
   const handleClear = () => {
     setValue("startDate", "");
     setValue("endDate", "");
-    setIsShowPlaceholder(true);
+    setSelectedDate(false);
     clearFilter(["startDate", "endDate"]);
     setKey((prev) => prev + 1);
   };
 
   const dateChangeHandler = (e) => {
-    setIsShowPlaceholder(false);
-    console.log("از تاریخ:", e.from);
-    console.log("تا تاریخ:", e.to);
+    setSelectedDate(true);
     setValue("startDate", dateFormatter(e.from));
     setValue("endDate", dateFormatter(e.to));
   };
 
   return (
-    <div className="relative mt-[15px] md:mt-0 ">
-      {isShowPlaceholder && (
-        <LuCalendarDays className="absolute right-[140px] top-0 bottom-0 my-auto w-[18px] text-black/50 pointer-events-none md:right-[60px] md:w-[24px] md:text-[#2c2c2c]" />
+    <div className="md:flex-1 relative mt-[15px] md:mt-0 ">
+      {!selectedDate && (
+        <div className="absolute inset-0 flex items-center justify-center gap-1  md:left-auto">
+          <LuCalendarDays className="w-[18px] md:w-[24px] text-black/50 md:text-[#2c2c2c]" />
+          <span className="text-[14px] text-black/50 md:text-[#2c2c2c] md:text-[18px]">
+            تاریخ
+          </span>
+        </div>
       )}
-      {!isShowPlaceholder && (
+
+      {selectedDate && (
         <button
           type="button"
           onClick={handleClear}
@@ -37,15 +41,15 @@ function DateRangePicker({ setValue, clearFilter }) {
           ×
         </button>
       )}
+
       <DatePicker
         range
         locale="fa"
         onChange={dateChangeHandler}
-        inputClass="w-full h-[47px] rounded-[12px] border border-black/15 !text-[14px] text-center text-black/50 placeholder:pr-[35px] placeholder:text-black/50 md:border-none md:!text-[20px] "
-        inputAttributes={{ placeholder: "تاریخ" }}
+        inputClass="w-full h-[47px] rounded-[12px] border border-black/15 text-center md:text_right text-black/50 md:border-none md:!text-[12.5px] md:w-[100px] lg:!text-[18px] lg:w-[135px]"
         accentColor="#28a745"
         round="x2"
-        className="!w-[331px] !h-[269px] !rounded-[12px] !bg-white !border !border-[#00000040] "
+        className="rounded-[16px] !bg-white border !border-[#00000040] "
         key={key}
       />
     </div>

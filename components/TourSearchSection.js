@@ -37,9 +37,13 @@ function TourSearchSection() {
   };
 
   return (
-    <div className="w-full my-[28px] ">
-      <form action="" onSubmit={handleSubmit(submitHandler)} className="md:flex md:items-center md:h-[71px] md:border md:border-black/15 md:rounded-[20px] md:mx-auto md:max-w-[874px] ">
-        <div className="flex justify-between">
+    <div className="w-full my-[28px]">
+      <form
+        action=""
+        onSubmit={handleSubmit(submitHandler)}
+        className="md:flex md:gap-1 md:items-center md:h-[50px] lg:h-[70px] md:border md:border-black/15 md:rounded-[20px] md:mx-auto md:w-[79.02%] md:pr-[8px]"
+      >
+        <div className="w-full flex gap-2 md:flex-2 md:gap-0">
           <SelectField
             icon={HiOutlineLocationMarker}
             fieldName="originId"
@@ -62,7 +66,7 @@ function TourSearchSection() {
         <DateRangePicker setValue={setValue} clearFilter={clearFilter} />
         <button
           type="submit"
-          className="w-[328px] h-[47px] bg-primary rounded-[16px] p-[8px] !text-[20px] !fw-400 text-white text-center mt-[22px] md:m-[0px] md:p-[0px] md:w-[190px]"
+          className="w-full md:flex-1 md:w-[clamp(100px,13.2vw,190px)] !text-[20px] h-[47px] md:h-[35px] bg-primary rounded-[16px] md:rounded-[12px] p-[8px] !fw-400 text-white text-center mt-[22px] md:m-[0px] md:p-[0px] md:ml-[8px] lg:h-[50px]"
         >
           جستجو
         </button>

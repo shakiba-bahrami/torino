@@ -4,13 +4,17 @@ import NavLinks from "./NavLinks";
 
 function Header({ setIsLoginOpen }) {
   return (
-    <header className="w-full overflow-hidden flex h-[64px] md:h-[74px]">
-      <div className="flex items-center rounded-t-xl bg-white justify-between px-[20px] border-b border-[#10411B]/1 shadow-[0px_1px_5px_0px_#00000030] mx-auto w-full max-w-[1440px] md:px-[100px]">
-        <div className="md:hidden">
+    <header className="relative mx-auto w-full max-w-[1440px] h-[65px] md:h-[clamp(65px,5.14vw,74px)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:shadow-[0_3px_5px_0_#00000030]">
+      <div className="flex items-center justify-between h-full px-[30px] lg:px-[100px]">
+        <div className="md:hidden mt-[10px]">
           <MenuButton />
         </div>
-        <div className="hidden md:block md:items-center md:gap-12 md:flex">
-          <img src="/images/torino.png" alt="" className="w-[190px] h-auto" />
+        <div className="hidden md:block md:items-center md:gap-[clamp(16px,3.33vw,48px)] md:flex">
+          <img
+            src="/images/torino.png"
+            alt=""
+            className="w-[130px] h-auto ml-[20px] lg:w-[146px]"
+          />
           <div className="hidden md:block">
             <NavLinks />
           </div>
