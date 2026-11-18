@@ -31,7 +31,7 @@ function SendOtpForm({ setStep, setMobile, mobile, setCode, setIsLoginOpen }) {
   };
 
   return (
-    <div className="w-[358px] h-[362px] flex flex-col justify-center items-start pr-[40px] relative">
+    <div className="w-[clamp(358px,49.21vw,561px)] h-[362px] flex flex-col justify-center items-start p-[40px] relative">
       <button
         type="button"
         onClick={() => {
@@ -43,8 +43,8 @@ function SendOtpForm({ setStep, setMobile, mobile, setCode, setIsLoginOpen }) {
       >
         x
       </button>
-      <form onSubmit={submitHandler} className="flex flex-col">
-        <h4 className="text-[22px] text-[#282828] fw-600 pb-[45px] text-center  mt-[19px]">
+      <form onSubmit={submitHandler} className="flex flex-col w-full">
+        <h4 className="text-[clamp(22px,1.94vw,28px)] text-[#282828] fw-600 pb-[45px] text-center  mt-[19px]">
           ورود به تورینو
         </h4>
         <label
@@ -60,12 +60,12 @@ function SendOtpForm({ setStep, setMobile, mobile, setCode, setIsLoginOpen }) {
           dir="ltr"
           id="phoneInput"
           value={mobile}
-          className="focus:outline-none mt-[10px] border-[1px] border-black/25 w-[278px] h-[54px] text-right pr-[8px] rounded-[6px]"
+          className="focus:outline-none mt-[10px] border-[1px] border-black/25 w-full h-[54px] text-right pr-[8px] rounded-[6px]"
           onChange={(e) => setMobile(e.target.value)}
         />
         <button
           type="submit"
-          className="bg-primary w-[278px] h-[54px] rounded-[6px]  text-white !text-[18px] mt-[41px] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-primary w-full h-[54px] rounded-[6px]  text-white !text-[18px] mt-[41px] disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         >
           {isPending ? "در حال ارسال..." : "ارسال کد تایید"}

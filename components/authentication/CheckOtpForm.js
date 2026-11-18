@@ -1,14 +1,16 @@
 "use client";
 import { useCheckOtp } from "@/core/services/mutations";
+import { toPersianDigits } from "@/core/utils/formatters";
 import { OTPInput } from "input-otp";
 import { useEffect, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { toast } from "react-toastify";
+const INITIAL_TIME = 60;
 
 function CheckOtpForm({ setStep, mobile, setMobile, code, setIsLoginOpen }) {
   const [otp, setOtp] = useState("");
-
   const { mutate, isPending } = useCheckOtp();
+  const [time, setTime] = useState(60);
 
   useEffect(() => {
     toast.info(code);
@@ -39,9 +41,21 @@ function CheckOtpForm({ setStep, mobile, setMobile, code, setIsLoginOpen }) {
       },
     );
   };
+  useEffect(() => {
+    if (time === 0) {
+      setTime(INITIAL_TIME);
+      setStep(1);
+      return;
+    }
 
+    const timer = setInterval(() => {
+      setTime((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [time]);
   return (
-    <div className="w-[358px] h-[362px] flex flex-col justify-center items-center text-center relative">
+    <div className="relative flex h-[362px] w-[clamp(358px,49.21vw,561px)] flex-col items-center justify-center px-[40px] text-center">
       <button
         type="button"
         onClick={() => {
@@ -49,29 +63,28 @@ function CheckOtpForm({ setStep, mobile, setMobile, code, setIsLoginOpen }) {
           setOtp("");
         }}
       >
-        <IoIosArrowRoundBack className="w-[40px] h-auto absolute top-2 left-2 pl-[2px]  pt-[2px]" />
+        <IoIosArrowRoundBack className="absolute left-2 top-2 h-auto w-[40px] pl-[2px] pt-[2px]" />
       </button>
-      <form onSubmit={submitHandler} className="flex flex-col">
-        <h4 className="text-[22px] fw-600 ">کد تایید را وارد کنید.</h4>
-        <label className="text-[14px] mt-[17px] fw-400">
-          کد تایید به شماره {mobile} ارسال شد
+
+      <form onSubmit={submitHandler} className="flex w-full flex-col">
+        <h4 className="text-[clamp(22px,1.94vw,28px)] fw-600">
+          کد تایید را وارد کنید.
+        </h4>
+
+        <label className="mt-[17px] text-[clamp(14px,1.12vw,16px)] fw-400">
+          کد تایید به شماره {toPersianDigits(mobile)} ارسال شد
         </label>
+
         <div dir="ltr" className="mt-[21px]">
           <OTPInput
             autoFocus
             maxLength={6}
             render={({ slots }) => (
-              <div style={{ display: "flex", gap: 4 }}>
+              <div className="flex justify-center gap-[clamp(4px,0.56vw,8px)]">
                 {slots.map((slot, idx) => (
                   <div
                     key={idx}
-                    style={{
-                      width: 50,
-                      height: 45,
-                      border: "1px solid #00000040",
-                      borderRadius: 6,
-                      outline: null,
-                    }}
+                    className="flex h-[clamp(40px,3.13vw,45px)] w-[clamp(40px,3.48vw,50px)] items-center justify-center rounded-[6px] border border-[#00000040]"
                   >
                     {slot.char}
                   </div>
@@ -82,15 +95,17 @@ function CheckOtpForm({ setStep, mobile, setMobile, code, setIsLoginOpen }) {
             onChange={setOtp}
           />
         </div>
-        <p className="text-[12px] text-muted fw-300 mt-[24px]">
-          تا ارسال مجدد کد
+
+        <p className="mt-[24px] text-[12px] text-muted fw-300">
+          {toPersianDigits(time)} ثانیه تا ارسال مجدد کد
         </p>
+
         <button
           type="submit"
-          className="bg-primary w-[278px] h-[54px] rounded-[6px]  text-white mx-auto mt-[27px] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="mx-auto mt-[27px] h-[54px] w-full rounded-[6px] bg-primary text-white !text-[clamp(16px,1.25vw,18px)] disabled:cursor-not-allowed disabled:opacity-50"
           disabled={isPending}
         >
-          {isPending ? "در حال بررسی..." : " ورود به تورینو"}
+          {isPending ? "در حال بررسی..." : "ورود به تورینو"}
         </button>
       </form>
     </div>
