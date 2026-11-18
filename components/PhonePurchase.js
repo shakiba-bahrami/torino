@@ -12,7 +12,7 @@ function PhonePurchase() {
             alt="خرید تلفنی"
             width={390}
             height={316}
-            className="m-auto w-[195px] absolute left-0 top-[-30px] md:w-[250px] md:top-[-75px] lg:w-[308px] lg:h-[225px] lg:top-[25px] lg:left-[320px]"
+            className="m-auto w-[195px] absolute left-0 top-[-30px] md:w-[250px] md:top-[-75px] lg:w-[308px] lg:h-[225px] lg:top-[25px] lg:left-[clamp(100px,22.22vw,320px)]"
             loading="eager"
           />
           <div className="md:p-[20px]">

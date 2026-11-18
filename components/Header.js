@@ -4,7 +4,7 @@ import NavLinks from "./NavLinks";
 
 function Header({ setIsLoginOpen }) {
   return (
-    <header className="relative mx-auto w-full max-w-[1440px] h-[65px] md:h-[clamp(65px,5.14vw,74px)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:shadow-[0_3px_5px_0_#00000030]">
+    <header className="relative mx-auto w-full max-w-[1440px] h-[65px] md:h-[clamp(65px,5.14vw,74px)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:shadow-[0_3px_5px_0_#00000030]]">
       <div className="flex items-center justify-between h-full px-[30px] lg:px-[100px]">
         <div className="md:hidden mt-[10px]">
           <MenuButton />

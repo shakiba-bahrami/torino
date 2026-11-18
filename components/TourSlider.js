@@ -13,7 +13,7 @@ function TourSlider() {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
-    <section className=" h-[clamp(284px,42.1vw,480px)] w-[clamp(325px,43.86vw,500px)] mx-auto ">
+    <section className="h-[clamp(284px,42.1vw,480px)] w-[clamp(325px,43.86vw,500px)] mx-auto ">
       <Swiper
         slidesPerView={1}
         loop={slidesImages.length > 1}
