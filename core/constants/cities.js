@@ -9,3 +9,4 @@ export const cities = [
   { id: "8", name: "گیلان" },
   { id: "9", name: "ایتالیا" },
 ];
+

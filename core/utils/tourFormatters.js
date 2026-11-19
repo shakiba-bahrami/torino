@@ -8,7 +8,7 @@ export const getTourSummary = (tour) => {
   const monthName = `${month} ماه`;
   const durationDays = `${(new Date(tour.endDate) - new Date(tour.startDate)) / (1000 * 60 * 60 * 24)} روزه`;
   let travelKind;
-  switch (tour.fleetVehicle) {
+  switch (tour.fleetVehicle.toLowerCase()) {
     case "airplane":
       travelKind = "پرواز";
       break;
@@ -24,6 +24,10 @@ export const getTourSummary = (tour) => {
     case "train":
       travelKind = "قطار";
       break;
+    case "suv":
+      travelKind = "آفرود";
+      break;
+
     default:
       travelKind = "";
   }

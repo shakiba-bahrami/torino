@@ -1,16 +1,12 @@
-
 function Footer() {
   return (
     <footer className="w-full text-[#282828]">
-      <div className="my-[28px] h-[1.5px] w-full bg-[repeating-linear-gradient(to_right,#D9D9D9_0px,#D9D9D9_8px,transparent_8px,transparent_15px)]" />
+      <div className="mb-[28px] h-[1.5px] w-full bg-[repeating-linear-gradient(to_right,#D9D9D9_0px,#D9D9D9_8px,transparent_8px,transparent_15px)]" />
 
       <div className="flex flex-wrap justify-center gap-y-8 lg:flex-nowrap lg:items-start lg:justify-between">
-
         <div className="flex gap-x-[clamp(24px,5vw,60px)]">
           <div>
-            <h4 className="mb-4 text-[clamp(16px,2vw,24px)] fw-600">
-              تورینو
-            </h4>
+            <h4 className="mb-4 text-[clamp(16px,2vw,24px)] fw-600">تورینو</h4>
             <ul className="space-y-4 text-[clamp(12px,1.5vw,18px)] fw-400">
               <li>درباره ما</li>
               <li>تماس با ما</li>
@@ -45,13 +41,33 @@ function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 sm:justify-end">
-  <img src="/images/TrustBadges/ecunion.png" alt="ecunion" className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain" />
-  <img src="/images/TrustBadges/samandehi.png" alt="samandehi" className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain" />
-  <img src="/images/TrustBadges/airline.png" alt="airline" className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain" />
-  <img src="/images/TrustBadges/state-airline.png" alt="state-airline" className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain" />
-  <img src="/images/TrustBadges/passenger-rights.png" alt="passenger-rights" className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain" />
-</div>
+          <div className="flex flex-row-reverse flex-wrap  items-center justify-center gap-x-3 gap-y-3 sm:justify-end">
+            <img
+              src="/images/TrustBadges/ecunion.png"
+              alt="ecunion"
+              className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain"
+            />
+            <img
+              src="/images/TrustBadges/samandehi.png"
+              alt="samandehi"
+              className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain"
+            />
+            <img
+              src="/images/TrustBadges/airline.png"
+              alt="airline"
+              className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain"
+            />
+            <img
+              src="/images/TrustBadges/state-airline.png"
+              alt="state-airline"
+              className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain"
+            />
+            <img
+              src="/images/TrustBadges/passenger-rights.png"
+              alt="passenger-rights"
+              className="h-auto w-[clamp(40px,4.72vw,68px)] object-contain"
+            />
+          </div>
         </div>
       </div>
 

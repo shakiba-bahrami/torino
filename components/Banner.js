@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Banner() {
   return (
-    <section className="relative w-screen right-1/2 translate-x-1/2">
+    <section className="relative w-screen right-1/2 translate-x-1/2 max-w-[1440px]">
       <Image
         src="/images/banner.png"
         width={2732}

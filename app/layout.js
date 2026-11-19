@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <TanstackQueryProvider>
           <AuthModalProvider>
             <Container>
-              <main className="flex-1">{children}</main>
+              <main className="flex flex-1 flex-col">{children}</main>
               <Footer />
             </Container>
           </AuthModalProvider>

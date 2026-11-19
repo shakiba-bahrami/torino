@@ -18,3 +18,12 @@ export const getTourDuration = (startDate, endDate) => {
     nights,
   };
 };
+export function toPersianDate(date) {
+  return new Intl.DateTimeFormat("fa-IR", {
+    calendar: "persian",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "Asia/Tehran",
+  }).format(new Date(date));
+}
