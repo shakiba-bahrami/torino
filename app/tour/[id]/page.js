@@ -25,7 +25,7 @@ async function TourDetailsPage({ params }) {
   const fleetVehicleType = tourDetails.fleetVehicle.toLowerCase();
 
   return (
-    <div className="bg-[#F3F3F3] lg:px-[clamp(40px,calc(10.75vw_-_28.8px),126px)]  lg:relative lg:right-1/2 lg:w-screen lg:translate-x-1/2 lg:pt-[30px] max-w-[1440px] flex-1">
+    <div className="bg-[#F3F3F3] lg:px-[clamp(40px,calc(10.75vw_-_28.8px),126px)]  lg:relative lg:right-1/2 lg:w-screen lg:translate-x-1/2 lg:pt-[30px] max-w-[1440px] flex-1 lg:pb-[30px]">
       <div className="w-full bg-white flex flex-col justify-center items-center lg:border lg:border-black/20 lg:rounded-[10px] lg:p-[20px]">
         <div className="lg:flex lg:flex-row lg:justify-between lg:w-full ">
           <div className="relative w-[clamp(330px,27.56vw,397px)] h-[clamp(220px,calc(4.29vw_+_203.29px),265px)] mx-auto lg:mx-0 mt-[10px] lg:shrink-0">
