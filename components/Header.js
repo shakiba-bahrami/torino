@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Header({ setIsLoginOpen }) {
   return (
-    <header className="relative mx-auto w-full max-w-[1440px] h-[65px] md:h-[clamp(65px,5.14vw,74px)] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
+    <header className="sticky top-0 z-50 relative mx-auto w-full max-w-[1440px] h-[65px] md:h-[clamp(65px,5.14vw,74px)] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
       <div className="flex items-center justify-between h-full px-[30px] lg:px-[100px] ">
         <div className="md:hidden mt-[10px]">
           <MenuButton />

@@ -36,33 +36,33 @@ function ProfileLayout({ children }) {
 
   return (
     <AuthProvider>
-      <div className="mt-[10px]">
-        <nav className="w-full h-[38px] flex gap-2 justify-between text-center border-b-1 border-black/15 text-[12px]">
+      <div className="mt-[10px] lg:flex lg:gap-4 ">
+        <nav className="w-full h-[38px] flex gap-2 justify-between text-center border-b-1 border-black/15 text-[12px] lg:text-[14px] lg:flex-col lg:flex-1 lg:h-auto lg:max-w-[284px] lg:max-h-[170px] lg:mt-[20px] lg:border lg:border-black/20 lg:rounded-[10px] lg:overflow-hidden ">
           <Link
             href="/profile"
-            className={`flex-1 flex justify-center gap-2 items-center -mb-[2px] pl-[5px] ${pathname === "/profile" && "border-b-2 border-primary text-primary"}`}
+            className={`flex-1 flex justify-center lg:justify-start lg:pr-[20px] lg:border-b lg:border-b-black/20 gap-2 items-center -mb-[2px] pl-[5px] ${pathname === "/profile" && "border-b-2 border-primary text-primary lg:bg-[#28A745]/20 lg:text-primary"}`}
           >
-            <IoPerson className="rounded-[50%] w-[16px] h-auto" />
+            <IoPerson className="rounded-[50%] w-[16px] h-auto" /> 
             <p className="">پروفایل</p>
           </Link>
 
           <Link
             href="/profile/mytours"
-            className={`flex-1 flex justify-center gap-2 items-center -mb-[2px] pl-[5px] ${pathname === "/profile/mytours" && "border-b-2 border-primary text-primary"}`}
+            className={`flex-1 flex justify-center lg:justify-start lg:pr-[20px] lg:border-b lg:border-b-black/20 gap-2 items-center -mb-[2px] pl-[5px] ${pathname === "/profile/mytours" && "border-b-2 border-primary text-primary lg:bg-[#28A745]/20 lg:text-primary"}`}
           >
             <PiSunHorizonFill className="w-[16px] h-auto" />
             <p>تورهای من</p>
           </Link>
           <Link
             href="/profile/transactions"
-            className={`flex-1 flex justify-center gap-2 items-center -mb-[2px] pl-[5px] ${pathname === "/profile/transactions" && "border-b-2 border-primary text-primary"}`}
+            className={`flex-1 flex justify-center lg:justify-start lg:pr-[20px] lg:border-b lg:border-b-black/20 gap-2 items-center -mb-[2px] pl-[5px] ${pathname === "/profile/transactions" && "border-b-2 border-primary text-primary lg:bg-[#28A745]/20 lg:text-primary"}`}
           >
             <TbReplaceFilled className="w-[16px] h-auto" />
             <p>تراکنش ها</p>
           </Link>
         </nav>
-      </div>
       {children}
+      </div>
     </AuthProvider>
   );
 }

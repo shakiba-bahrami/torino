@@ -8,6 +8,7 @@ import { emailSchema } from "@/core/utils/profileSchema";
 import { useAddUserData } from "@/core/services/mutations";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import { BiEditAlt } from "react-icons/bi";
 
 function AccountInfo() {
   const { data, isPending } = useGetUserData();
@@ -51,33 +52,57 @@ function AccountInfo() {
   };
 
   return (
-    <div className="border border-black/20 rounded-[10px] p-[20px] flex flex-col gap-8">
-      <h4 className="text-[15px] fw-500">اطلاعات حساب کاربری</h4>
-      <div className="flex justify-between text-[14px] fw-300">
-        <p>شماره موبایل</p>
-        <p className="fw-400">
-          {userData?.mobile ? toPersianDigits(userData.mobile) : "ــــــــ"}
-        </p>
+    <div className="flex flex-col lg:flex-row lg:justify-between gap-6 border border-black/20 rounded-[10px] p-[20px]">
+      <div className="flex flex-col gap-6">
+        <h4 className="text-[15px] lg:text-[16px] fw-500">
+          اطلاعات حساب کاربری
+        </h4>
+        <div className="flex justify-between lg:gap-13  text-[14px] fw-300">
+          <p>شماره موبایل</p>
+          <p className="fw-600">
+            {userData?.mobile ? toPersianDigits(userData.mobile) : "ــــــــ"}
+          </p>
+        </div>
       </div>
       {isEditing ? (
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="email" placeholder="ادرس ایمیل" {...register("email")} />
-          {errors.email && (
-            <p className="text-red-500 text-xs">{errors.email.message}</p>
-          )}
-          <button type="submit">تایید</button>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="lg:flex lg:items-end"
+        >
+          <div className="w-full flex gap-3 lg:items-end justify-between lg:justify-around">
+            <input
+              type="email"
+              placeholder="ادرس ایمیل"
+              {...register("email")}
+              className="w-[255px] h-[45px] flex-4 border border-black/50 rounded-[5px] !text-[14px] p-[5px]"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-xs">{errors.email.message}</p>
+            )}
+            <button
+              type="submit"
+              className="w-[122px] h-[45px] bg-primary text-white flex-1 rounded-[5px]"
+            >
+              تایید
+            </button>
+          </div>
         </form>
       ) : (
-        <div className="flex justify-between text-[14px] fw-300">
-          <p>ایمیل</p>
-          <p className="fw-400">{userData?.email || "ــــــــ"}</p>
+        <>
+          <div className="lg:flex-2 flex justify-between lg:justify-around text-[14px] fw-300 lg:items-end">
+            <p className="text-[14px]">ایمیل</p>
+            <p className="fw-600 text-[14px]">
+              {userData?.email || "ــــــــ"}
+            </p>
+          </div>
           <button
             onClick={() => setIsEditing(true)}
-            className="text-info fw-400"
+            className="text-info fw-400 flex gap-2 mr-auto lg:mt-auto"
           >
-            افزودن
+            <BiEditAlt />
+            <p className="text-[13px]"> افزودن</p>
           </button>
-        </div>
+        </>
       )}
     </div>
   );
