@@ -6,13 +6,28 @@ The application is built with Next.js and provides a user-friendly interface wit
 
 ## Screenshots
 
-### Desktop
+### Home
 
-![Torino Desktop](public/screenshots/home-desktop.png)
+![Home Desktop](public/screenshots/home-desktop.png)
+![Home Mobile](public/screenshots/home-mobile.png)
 
-### Mobile
+### otp
 
-![Torino Mobile](public/screenshots/home-mobile.png)
+![Send Otp](public/screenshots/send-otp.png)
+![Check Otp](public/screenshots/check-otp.png)
+
+### Profile
+
+![Profile Mobile](public/screenshots/profile-mobile.png)
+
+### My Tours
+
+![My Tours Mobile](public/screenshots/my-tours-mobile.png)
+
+### Tour Details
+
+![Tours Details Mobile](public/screenshots/tourDetails-mobile.png)
+![Tours Details Desktop](public/screenshots/tourDetails-desktop.png)
 
 ## Features
 
