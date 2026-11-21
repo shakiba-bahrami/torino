@@ -9,6 +9,8 @@ function TourList({ toursData }) {
   useEffect(() => {
     setVisibleToursCount(window.innerWidth >= 768 ? 8 : 5);
   }, []);
+
+  
   return (
     <div className="my-[48px]">
       <h2 className="fw-400 text-[20px] md:text-[32px] text-black translate-y-4">

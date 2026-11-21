@@ -1,10 +1,7 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import NavLinks from "./NavLinks";
 
 function Sidebar({ onClose }) {
-  const pathname = usePathname();
   return (
     <>
       <button

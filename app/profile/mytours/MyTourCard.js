@@ -11,8 +11,6 @@ import { fleetVehicle } from "@/core/constants/fleetVehicle";
 
 function MyTourCard({ tour }) {
   console.log(tour);
-  // console.log(tour.destination.id);
-  // console.log(tour.origin.id);
   console.log(cities);
   const fleetVehicleType = tour.fleetVehicle.toLowerCase();
   const now = new Date();

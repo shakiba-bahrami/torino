@@ -4,11 +4,19 @@ import EmptyTours from "./EmptyTours";
 import MyTourCard from "./MyTourCard";
 
 function MyToursPage() {
-  const { data, isPending, isError } = useGetUserTours();
+  const { data, isPending, isError,refetch  } = useGetUserTours();
 
   if (isPending) return <p>در حال دریافت تورها</p>;
-  if (isError) return <p>خطا در دریافت تورها</p>;
-
+  if (isError) {
+  return (
+    <div>
+      <p>خطا در دریافت تورها</p>
+      <button onClick={() => refetch()}>
+        تلاش مجدد
+      </button>
+    </div>
+  );
+}
   if (data?.data.length === 0) return <EmptyTours />;
 
   return (
