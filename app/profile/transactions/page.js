@@ -10,7 +10,7 @@ function TransactionsPage() {
   if (transactionsList.length === 0) return <EmptyTours />;
 
   return (
-    <div className="overflow-hidden mt-[20px] border-1 border-black/25 rounded-[10px]">
+    <div className="overflow-hidden mt-[20px] border-1 border-black/25 rounded-[10px] lg:flex-3 ">
       <table className="w-full text-center ">
         <thead className="text-[12px] fw-400 border-b border-black/25 bg-black/10 rounded-t-lg">
           <tr className=" h-[40px] ">

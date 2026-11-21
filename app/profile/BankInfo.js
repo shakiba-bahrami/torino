@@ -163,17 +163,17 @@ function BankInfo() {
           </button>
 
           <p>شماره کارت</p>
-          <p className="fw-600 text-[14px]">
+          <p className="fw-600 text-[14px] text-left">
             {toPersianDigits(userData?.payment?.debitCard_code) || "ــــــــ"}
           </p>
 
           <p>شماره شبا</p>
-          <p className="fw-600 text-[14px]">
+          <p className="fw-600 text-[14px] break-all min-w-0 text-left">
             {toPersianDigits(userData?.payment?.shaba_code) || "ــــــــ"}
           </p>
 
           <p>شماره حساب</p>
-          <p className="fw-600 text-[14px]">
+          <p className="fw-600 text-[14px] text-left">
             {toPersianDigits(userData?.payment?.accountIdentifier) || "ــــــــ"}
           </p>
         </div>

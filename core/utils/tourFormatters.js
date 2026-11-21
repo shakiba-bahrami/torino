@@ -1,5 +1,5 @@
-export const getTourSummary = (tour) => {
-  //   console.log(tour);
+import { travelKind } from "./travelKind";
+const getTourSummary = (tour) => {
   const date = new Date(tour.startDate);
   const month = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
     month: "long",
@@ -7,29 +7,9 @@ export const getTourSummary = (tour) => {
   }).format(date);
   const monthName = `${month} ماه`;
   const durationDays = `${(new Date(tour.endDate) - new Date(tour.startDate)) / (1000 * 60 * 60 * 24)} روزه`;
-  let travelKind;
-  switch (tour.fleetVehicle.toLowerCase()) {
-    case "airplane":
-      travelKind = "پرواز";
-      break;
-    case "bus":
-      travelKind = "اتوبوس";
-      break;
-    case "ship":
-      travelKind = "کشتی";
-      break;
-    case "van":
-      travelKind = "ون";
-      break;
-    case "train":
-      travelKind = "قطار";
-      break;
-    case "suv":
-      travelKind = "آفرود";
-      break;
 
-    default:
-      travelKind = "";
-  }
-  return `${monthName} . ${durationDays} - ${travelKind} - ${tour.options[1]} ${tour.options[0]}`;
+  let myTravelKind = travelKind(tour.fleetVehicle);
+  return `${monthName} . ${durationDays} - ${myTravelKind} - ${tour.options[1]} ${tour.options[0]}`;
 };
+
+export { getTourSummary };

@@ -2,6 +2,7 @@
 import { useGetUserTours } from "@/core/services/queries";
 import EmptyTours from "./EmptyTours";
 import MyTourCard from "./MyTourCard";
+
 function MyToursPage() {
   const { data, isPending, isError } = useGetUserTours();
 
@@ -11,10 +12,10 @@ function MyToursPage() {
   if (data?.data.length === 0) return <EmptyTours />;
 
   return (
-    <div className="mt-[20px] bg-blue-300">
+    <div className="mt-[20px] lg:border lg:border-black/20 lg:px-[20px] lg:rounded-[10px] lg:w-full lg:flex-3">
       <ul>
-        {data.data.map((tour) => (
-          <li key={tour.id}>
+        {data.data.map((tour,index) => (
+          <li key={`${tour.id}-${index}`}>
             <MyTourCard tour={tour} />
           </li>
         ))}
