@@ -28,10 +28,14 @@ function AuthSection({ setIsLoginOpen }) {
             <button
               type="button"
               onClick={() => setIsLoginOpen(true)}
-              className="flex gap-2 w-[clamp(130px,11.53vw,166px)] h-auto text-primary text-[clamp(14px,1.25vw,18px)] !fw-600 p-[clamp(6px,0.7vw,10px)] border-2 border-primary rounded-[8px]"
+              className="flex items-center gap-2 w-[150px] h-[45px] text-primary text-[14px] !fw-600 p-[clamp(6px,0.7vw,10px)] border-2 border-primary rounded-[8px]"
             >
               <IoPerson className="text-[22px] my-auto rounded-[50%]" />
+              <p>
               ورود  |  ثبت نام
+
+              </p>
+
             </button>
           </div>
         </>
