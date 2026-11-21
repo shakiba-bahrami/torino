@@ -12,7 +12,7 @@ function MyToursPage() {
   if (data?.data.length === 0) return <EmptyTours />;
 
   return (
-    <div className="mt-[20px] lg:border lg:border-black/20 lg:px-[20px] lg:rounded-[10px] lg:w-full lg:flex-3">
+    <div className="my-[20px] lg:border lg:border-black/20 lg:px-[20px] lg:rounded-[10px] lg:w-full lg:flex-3">
       <ul>
         {data.data.map((tour,index) => (
           <li key={`${tour.id}-${index}`}>

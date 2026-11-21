@@ -31,9 +31,30 @@ export function toPersianDate(date) {
 
   return new Intl.DateTimeFormat("fa-IR", {
     calendar: "persian",
+    weekday: "long",
     day: "numeric",
     month: "long",
     year: "numeric",
     timeZone: "Asia/Tehran",
   }).format(new Date(date));
+}
+
+export function toPersianDateTime(date) {
+  if (!date) return "";
+
+  const parts = new Intl.DateTimeFormat("en-US-u-ca-persian-nu-latn", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: "Asia/Tehran",
+  }).formatToParts(new Date(date));
+
+  const get = (type) => parts.find((part) => part.type === type)?.value;
+
+  return toPersianDigits(
+    `${get("hour")}:${get("minute")} - ${get("year")}/${get("month")}/${get("day")}`
+  );
 }
