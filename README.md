@@ -1,97 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Torino | Online Travel Booking Platform
+
+Torino is a responsive online travel booking platform that allows users to explore domestic and international tours, search for trips, book tours, and manage their accounts.
+
+The application is built with Next.js and provides a user-friendly interface with Persian (RTL) support.
+
+## Screenshots
+
+### Desktop
+
+![Torino Desktop](public/screenshots/home-desktop.png)
+
+### Mobile
+
+![Torino Mobile](public/screenshots/home-mobile.png)
+
+## Features
+
+- Browse domestic and international tours
+- Search tours by origin, destination, and travel date
+- View tour information and details
+- User authentication using mobile number and OTP verification
+- Manage personal account information
+- Edit personal and banking information
+- Add tours to the shopping basket
+- Complete the booking and purchase process
+- View purchased tours and transaction history
+- Responsive design for desktop, tablet, and mobile devices
+- Persian language and RTL layout
+
+## Tech Stack
+
+**Frontend**
+
+- [Next.js 16](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Axios](https://axios-http.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Swiper](https://swiperjs.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
+
+## Project Structure
+
+```text
+torino/
+├── app/                  # Application routes and layouts
+├── components/           # Reusable UI components
+├── core/
+│   ├── config/           # Application configuration
+│   ├── services/         # API services and queries
+│   └── utils/            # Helper functions
+├── provider/             # Application providers
+├── public/               # Static assets
+│   ├── fonts/
+│   ├── images/
+│   └── screenshots/
+├── .gitignore
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+└── README.md
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js
+- npm
+- Torino API server
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/shakiba-bahrami/torino.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd torino
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Make sure the Torino API server is running and the API base URL in the project configuration points to the correct address.
+
+5. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open the following URL in your browser:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Available Scripts
 
-## Learn More
+| Command         | Description                           |
+| --------------- | ------------------------------------- |
+| `npm run dev`   | Starts the development server         |
+| `npm run build` | Builds the application for production |
+| `npm run start` | Starts the production server          |
 
-To learn more about Next.js, take a look at the following resources:
+## Backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Torino frontend communicates with a separate backend API for authentication, tour information, user profiles, basket management, and transactions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on Vercel
+**Shakiba Bahrami**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-# torino
-
-# torino structure
-
-torino/
-│
-├── app/
-│ ├── layout.jsx
-│ ├── page.jsx
-│ ├── globals.css
-│ │
-│ └── profiles/
-│ └── page.jsx
-│
-├── components/
-│ ├── auth/
-│ │ ├── AuthForm.jsx
-│ │ ├── LoginModal.jsx
-│ │ └── OtpModal.jsx
-│ │
-│ ├── common/
-│ │ ├── Header.jsx
-│ │ ├── Footer.jsx
-│ │ └── ...
-│ │
-│ └── ...
-│
-├── core/
-│ ├── config/
-│ │ └── axiosConfig.js
-│ │
-│ ├── services/
-│ │ ├── authService.js
-│ │ ├── userService.js
-│ │ ├── basketService.js
-│ │ └── tourService.js
-│ │
-│ └── utils/
-│ ├── getCookie.js
-│ ├── setCookie.js
-│ └── isValidMobile.js
-│
-├── hooks/
-│ ├── auth/
-│ │ ├── useGetUserData.js
-│ │ ├── useSendOtp.js
-│ │ └── useCheckOtp.js
-│ │
-│ ├── user/
-│ │ ├── useGetUserTours.js
-│ │ └── ...
-│ │
-│ ├── basket/
-│ │ ├── useGetUserBasket.js
-│ │ └── useAddToBasket.js
-│ │
-│ └── ...
-│
-└── providers/
-└── TanStackQueryProvider.jsx
+[GitHub Repository](https://github.com/shakiba-bahrami/torino)
