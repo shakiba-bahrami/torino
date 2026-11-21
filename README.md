@@ -11,7 +11,7 @@ The application is built with Next.js and provides a user-friendly interface wit
 ![Home Desktop](public/screenshots/home-desktop.png)
 ![Home Mobile](public/screenshots/home-mobile.png)
 
-### otp
+### OTP Authentication
 
 ![Send Otp](public/screenshots/send-otp.png)
 ![Check Otp](public/screenshots/check-otp.png)
@@ -26,8 +26,8 @@ The application is built with Next.js and provides a user-friendly interface wit
 
 ### Tour Details
 
-![Tours Details Mobile](public/screenshots/tourDetails-mobile.png)
-![Tours Details Desktop](public/screenshots/tourDetails-desktop.png)
+![Tour Details Mobile](public/screenshots/tourDetails-mobile.png)
+![Tour Details Desktop](public/screenshots/tourDetails-desktop.png)
 
 ## Features
 
